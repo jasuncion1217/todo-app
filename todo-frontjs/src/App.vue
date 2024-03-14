@@ -39,8 +39,6 @@ const addTask = () => {
     })
     .catch(function (error) {
       errorsAdd.value = error.response.data.errors.task_name[0];
-      toast.error(error.response.data.errors.task_name[0]);
-      console.log(errors.value);
     });
 }
 
@@ -123,7 +121,6 @@ const update = (taskId) => {
     })
     .catch(function (error) {
       errorsEdit.value = error.response.data.errors.task_name[0];
-      toast.error(error.response.data.errors.task_name[0]);
     });
 }
 
