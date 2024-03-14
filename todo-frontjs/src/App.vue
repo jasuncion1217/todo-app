@@ -172,8 +172,8 @@ onMounted(() => {
                 <table class="table text-white mb-0">
                   <thead>
                     <tr>
-                      <th scople="cole">No.</th>
-                      <th scope="col">Task</th>
+                      <th scople="cole"></th>
+                      <th scope="col"></th>
                       <th scope="col"></th>
                     </tr>
                   </thead>
@@ -246,14 +246,14 @@ onMounted(() => {
                 </table>
 
                 <div class="pt-3 pb-2">
-                  <h2 class="my-4 text-dark">Task List</h2>
+                  <h2 class="my-4 text-dark">Tasks</h2>
                 </div>
 
                 <table class="table text-white mb-0">
                   <thead>
                     <tr>
-                      <th scope="col">No.</th>
-                      <th scope="col">Task</th>
+                      <th scope="col"></th>
+                      <th scope="col"></th>
                       <th scope="col"></th>
                     </tr>
                   </thead>
