@@ -13,6 +13,7 @@ const editTasksName = ref('');
 const editTasksId = ref('');
 const errorsAdd = ref(null);
 const errorsEdit = ref(null);
+const taskNameValue = ref('');
 
 const getTasks = () => {
   axios.get(`http://127.0.0.1:8000/api/task`)
@@ -26,13 +27,14 @@ const getTasks = () => {
 }
 
 const addTask = () => {
-  tasksName.value = document.getElementById('taskValue').value;
+  const taskName = taskNameValue.value;
+  console.log(taskName);
   axios.post(`http://127.0.0.1:8000/api/task`, {
-    task_name: tasksName.value,
+    task_name: taskName,
   })
     .then(function (response) {
       toast.success(response.data.message);
-      tasksName.value = '';
+      taskNameValue.value = '';
       getTasks();
       errorsAdd.value = null;
       errorsEdit.value = null;
@@ -147,7 +149,7 @@ onMounted(() => {
             <div class="card mask-custom">
               <div class="card-body p-4 text-white">
                 <div class="input-group flex-nowrap">
-                  <input type="text" id="taskValue" class="form-control" placeholder="Add new task"
+                  <input type="text" id="taskValue" v-model="taskNameValue" class="form-control" placeholder="Add new task"
                     aria-label="Username" aria-describedby="addon-wrapping" />
                   <button @click="addTask()" type="button" class="btn btn-success">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
